@@ -17,7 +17,7 @@ current_player = 'o'
 while not game_end:
     action_onehot = 0
     if current_player == mcts_player:
-        mcts = VanilaMCTS(n_iterations=1500, depth=15, exploration_constant=100, game_board=game_board, player=current_player)
+        mcts = VanilaMCTS(n_iterations=2000, depth=10, exploration_constant=100, game_board=game_board, player=current_player)
         best_action, best_q, depth = mcts.solve()
         action_onehot = np.zeros([state_size**2])
         action_onehot[best_action] = 1
