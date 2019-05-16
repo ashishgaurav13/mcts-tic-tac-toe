@@ -308,30 +308,30 @@ class VanilaMCTS(object):
         print(' [-] searching depth = %d' % (depth_searched))
 
         # FOR DEBUGGING
-        fig = plt.figure(figsize=(5,5))
-        for a in action_candidates:
-            # print('a= ', a)
-            _node = self.tree[(0,)+(a,)]
-            _state = deepcopy(_node['state'])
+        # fig = plt.figure(figsize=(5,5))
+        # for a in action_candidates:
+        #     # print('a= ', a)
+        #     _node = self.tree[(0,)+(a,)]
+        #     _state = deepcopy(_node['state'])
 
-            _q = _node['q']
-            _action_onehot = np.zeros(len(_state)**2)
-            # _state[_action_onehot] = -1
+        #     _q = _node['q']
+        #     _action_onehot = np.zeros(len(_state)**2)
+        #     # _state[_action_onehot] = -1
 
-            # print('action = %d, q = %.3f' % (a, _q))
-            # print('state after action: ')
-            # for _row in _state:
-            #     print(_row)
-            plt.subplot(len(_state),len(_state),a+1)
-            plt.pcolormesh(_state, alpha=0.7, cmap="RdBu")
-            plt.axis('equal')
-            plt.gca().invert_yaxis()
-            plt.xticks([], [])
-            plt.yticks([], [])
-            plt.title('[%d] q=%.2f' % (a,_q))
-        plt.draw()
-        plt.waitforbuttonpress(0)
-        plt.close(fig)
+        #     # print('action = %d, q = %.3f' % (a, _q))
+        #     # print('state after action: ')
+        #     # for _row in _state:
+        #     #     print(_row)
+        #     plt.subplot(len(_state),len(_state),a+1)
+        #     plt.pcolormesh(_state, alpha=0.7, cmap="RdBu")
+        #     plt.axis('equal')
+        #     plt.gca().invert_yaxis()
+        #     plt.xticks([], [])
+        #     plt.yticks([], [])
+        #     plt.title('[%d] q=%.2f' % (a,_q))
+        # plt.draw()
+        # plt.waitforbuttonpress(0)
+        # plt.close(fig)
 
 
         return best_action, best_q, depth_searched
